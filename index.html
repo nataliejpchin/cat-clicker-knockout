@@ -5,15 +5,20 @@
     <title>Cat Clicker</title>
 </head>
 <body>
-    <ul></ul>
+
+    <!-- all of our data bind inside this div will be relevant to the currentCat (i.e. in the currentCat scope(called binding context in knockout)) -->
     <div data-bind = "with: currentCat">
         
+        <!-- really saying currentCat.name -->
         <h2 data-bind="text: name"></h2>
         
+        <!-- really saying currentCat.clickCount -->
         <div data-bind="text: clickCount"></div>
         
+        <!-- really saying currentCat.catLevel -->
         <div data-bind='text: catLevel'></div>
         
+        <!-- When you click on image, you are within the binding context of the current cat BUT we want to run incrementCounter in viewModel binding context, not on currentCat. currentCat does not have the incrementCounter function. use $parent to get up and out of the currentCat scope(called binding context in knockout) -->
         <img src="" alt="cute cat" data-bind="click: $parent.incrementCounter, attr: {src: imgSrc}">
         
         <h3>Nicknames</h3>
@@ -22,6 +27,8 @@
         </ul>
 
     </div>
+    
+    
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
 </body>

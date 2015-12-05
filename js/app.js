@@ -36,7 +36,7 @@ var ViewModel = function(){
   
   this.currentCat = ko.observable( new Cat() );
   
-  //increase number of click by 1 each time the cat image is clicked
+  //increase number of click by 1 each time the cat image is clicked. Do not need to call this.currentCat.clickcount anymore because already in the currentCat binding context because of the with in index.html
   this.incrementCounter = function(){
     
     this.clickCount(this.clickCount() + 1);
