@@ -36,10 +36,10 @@ var ViewModel = function(){
   // refer to ViewModel scope/binding context
   var self = this;
   
-  // creating a new Cat object
+  // set the first cat in the array to show when load
   this.currentCat = ko.observable( new Cat({
     clickCount: 0,
-    name: 'Tabby',
+    name: 'Garfield',
     imgSrc: 'img/434164568_fea0ad4013_z.jpg',
     nicknames: ['kitty', 'blacktie', 'whity']
   }) );
