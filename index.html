@@ -5,6 +5,13 @@
     <title>Cat Clicker</title>
 </head>
 <body>
+    
+    <!-- List of cats -->
+    <h3>List of cats</h3>
+    <ul data-bind = "foreach: catList">
+      <!-- within the binding context of catList but want to call the showClickedCat function in the viewModel binding context-->
+      <li data-bind = "text: name, click: $parent.showClickedCat"></li>
+    </ul>
 
     <!-- all of our data bind inside this div will be relevant to the currentCat (i.e. in the currentCat scope(called binding context in knockout)) -->
     <div data-bind = "with: currentCat">
